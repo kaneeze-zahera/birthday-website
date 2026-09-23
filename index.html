@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birthday Surprise 🎂</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- TAP TO START PAGE -->
+<section id="tap-page" class="tap-page">
+
+    <div class="tap-box">
+
+        <h1>✨ Tap Me ✨</h1>
+
+        <p>Something special is waiting for you 💗</p>
+
+        <button id="tapButton">
+            TAP ME 💕
+        </button>
+
+    </div>
+
+</section>
+<audio id="bgMusic" loop>
+    <source src="birthday-music.mp3" type="audio/mpeg">
+</audio>
+    <!-- CONFETTI -->
+    <div id="confetti-container"></div>
+
+
+    <!-- ==================== PAGE 1 : OPENING ==================== -->
+
+    <section class="opening" id="opening">
+
+        <!-- YES SCREEN -->
+        <div class="opening-screen" id="yesScreen">
+
+            <h1>𝑾𝒂𝒏𝒏𝒂 𝒔𝒆𝒆 𝒘𝒉𝒂𝒕 𝑰 𝒎𝒂𝒅𝒆? 👀</h1>
+
+            <img
+                src="gifs/yes.gif"
+                class="opening-gif"
+                alt="Cute animation"
+            >
+
+            <div class="opening-buttons">
+
+                <button id="yesButton">
+                    YES ❤️
+                </button>
+
+                <button id="noButton">
+                    NO 😒
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- NO SCREEN -->
+
+        <div class="no-screen" id="noScreen">
+
+            <h1>𝑯𝒐𝒘 𝑫𝒂𝒓𝒆 𝒀𝒐𝒖! 😤</h1>
+
+            <img
+                src="gifs/no.gif"
+                class="opening-gif"
+                alt="No reaction GIF"
+            >
+
+            <button id="tryAgainButton">
+                TRY AGAIN ❤️
+            </button>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ==================== PAGE 2 : BIRTHDAY ==================== -->
+
+    <section class="birthday" id="birthday">
+
+        <div class="balloons">
+            🎈 🎈 🎈
+        </div>
+
+        <h1>Happy Birthday! 🎂</h1>
+
+        <h2 id="friendName">
+            Sabeera
+        </h2>
+
+        <p>
+            Today is all about celebrating you! 🥳
+        </p>
+
+        <button id="continueButton">
+            There's More... 💌
+        </button>
+
+    </section>
+<!-- BIRTHDAY KISSES VIDEO PAGE -->
+<section id="kiss-video-page" class="kiss-video-page">
+
+    <div class="kiss-video-box">
+
+        <h1>Birthday Kisses 💋🎂</h1>
+
+        <img id="kissGif" src="gifs/kisses.gif" alt="Birthday Kisses">
+
+        <p>Sending you lots of birthday kisses 💗</p>
+
+        <button id="kissVideoNext">
+            Continue 💗
+        </button>
+
+    </div>
+
+</section>
+
+    <!-- ==================== PAGE 3 : PERSONAL MESSAGE ==================== -->
+
+    <section class="message" id="message">
+
+        <div class="message-box">
+
+            <span class="small-title">
+                A little message for you 💗
+            </span>
+
+            <h1>
+                For My Deewani! 💌
+            </h1>
+
+            <p>
+                Happy birthday to my deewani! I love you! ❤️
+            </p>
+
+            <p>
+                Tu kabhi aysa ich deewani sarka rehna 😂.
+                Tu samjhti ki main tujhe utah value nai detim kako,
+                but main sachi tujhe bht important mantim. 🫶
+            </p>
+
+            <p>
+                I hope all your dreams come true this year.
+                Enjoy every moment of your special day! ✨
+            </p>
+
+            <p>
+                Kabhi badal nako, aysa ich rhna,
+                andu bail ke sarka 😂.
+            </p>
+
+            <p>
+                Thank you for being such a good frnd.... 😚
+            </p>
+
+            <p>
+                Tere mey acha baath kayv kato —
+                You always listen to my words. 🥱😂
+            </p>
+
+            <p>
+                Hope this birthday becomes ur best bday forever ♾️
+            </p>
+
+            <p>
+                Hamey sab bhi tujhe kabhi support karte ich rhtey.
+                Whatever ur decision will be, we will always support u
+                in every situation. 😁
+                ur the positivity in our group. 
+                ur the exrovert who can change every introvert into extrovert.
+            </p>
+
+            <p>
+                Once again, many more happy returns of the day
+                to the world's craziest girl! 🐷😂❤️
+            </p>
+
+            <button id="photosButton">
+                Our Memories 📸
+            </button>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ==================== PAGE 4 : PHOTO SLIDESHOW ==================== -->
+
+    <section class="memories" id="memories">
+
+        <div class="memory-content">
+
+            <span class="small-title">
+                A few memories 📸
+            </span>
+
+            <h1>
+                Our Little Moments 💗
+            </h1>
+
+            <p class="memory-intro">
+                Some moments are too special to forget. ✨
+            </p>
+
+
+            <!-- SLIDESHOW -->
+
+            <div class="slideshow">
+
+                <img
+                    id="slideImage"
+                    src="photos/photo1.jpg"
+                    alt="Memory"
+                >
+
+                <div
+                    class="slide-caption"
+                    id="slideCaption"
+                >
+                    One of those moments I'll always remember. 💕
+                </div>
+
+            </div>
+
+
+            <!-- SLIDESHOW CONTROLS -->
+
+            <div class="slideshow-controls">
+
+                <button
+                    id="prevButton"
+                    class="slide-arrow"
+                >
+                    ←
+                </button>
+
+                <span id="slideCounter">
+                    1 / 10
+                </span>
+
+                <button
+                    id="nextButton"
+                    class="slide-arrow"
+                >
+                    →
+                </button>
+
+            </div>
+
+
+            <!-- NEXT TO CAKE -->
+
+            <button id="friendshipButton">
+                There's More 🤍
+            </button>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ==================== PAGE 5 : CAKE ==================== -->
+
+    <section id="cake-page" class="page">
+
+        <div class="cake-content">
+
+            <h1 class="shabbu-title">
+                Shabbu 🎀
+            </h1>
+
+            <p class="cake-subtitle">
+                A little birthday surprise for you...
+            </p>
+
+
+            <!-- CAKE -->
+
+            <div class="cake-area">
+
+                <div class="candle">
+
+                    <div
+                        id="flame"
+                        class="flame"
+                    ></div>
+
+                </div>
+
+
+                <div class="cake">
+
+                    <div class="cake-top"></div>
+
+                    <div class="cake-body"></div>
+
+                    <div class="cake-cream"></div>
+
+                </div>
+
+            </div>
+
+
+            <p id="blow-text">
+                Blow the candle 🕯️
+            </p>
+
+
+            <button
+                id="blow-button"
+                onclick="startBlowing()"
+            >
+                🎤 Blow
+            </button>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ==================== WISH SCREEN ==================== -->
+
+    <div id="wish-screen">
+
+        <div class="wish-box">
+
+            <h1>
+                ✨ Close your eyes ✨
+            </h1>
+
+            <p>
+                and make a wish...
+            </p>
+
+            <button onclick="wishMade()">
+                Yes, I made a wish 💗
+            </button>
+
+        </div>
+
+    </div>
+
+
+<!-- VIDEO PAGE -->
+<section id="video-page" class="video-page">
+
+    <div class="video-box">
+
+        <h1>One Last Little Surprise 🎬💗</h1>
+
+        <video id="birthdayVideo" controls>
+            <source src="video.mp4" type="video/mp4">
+            Your browser does not support the video.
+        </video>
+
+        <button id="videoNextButton">
+            Next 💗
+        </button>
+
+    </div>
+
+</section>
+    <!-- ==================== PAGE 6 : FINAL SURPRISE ==================== -->
+
+    <section class="final" id="final">
+
+        <div class="final-box">
+
+            <span class="small-title">
+                One last thing... 👀
+            </span>
+
+            <h1>
+                For You, Sabeera 💗
+            </h1>
+
+            <p>
+                No matter where life takes us,
+                I hope our friendship always stays
+                this crazy, random and special. 🫶
+            </p>
+
+            <p>
+                Keep smiling, keep being your crazy self,
+                and never change. 😂❤️ hope you like this small gift .... ✨
+                if u want to listen full music keep the websie online then listen full song byeeee love u 
+            </p>
+
+            <h2>
+                Happy Birthday to my extrovert version  Once Again! 🎂✨
+                love you sabeera 💗
+            </h2>
+
+            <div class="final-hearts">
+                💗 ✨ 💕 ✨ 💗
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- JAVASCRIPT -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

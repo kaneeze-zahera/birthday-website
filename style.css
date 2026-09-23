@@ -1,0 +1,1538 @@
+
+
+/* =====================================================
+   RESET
+===================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+}
+
+section {
+    width: 100%;
+    min-height: 100vh;
+}
+
+
+/* =====================================================
+   COMMON BUTTON
+===================================================== */
+
+button {
+    border: none;
+    outline: none;
+    padding: 16px 30px;
+    border-radius: 30px;
+    background: white;
+    color: #9b5de5;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+
+    transition: transform 0.3s ease;
+}
+
+button:hover {
+    transform: scale(1.08);
+}
+
+
+/* =====================================================
+   PAPER BLAST / CONFETTI
+===================================================== */
+
+#confetti-container {
+    position: fixed;
+    inset: 0;
+
+    width: 100vw;
+    height: 100vh;
+
+    overflow: hidden;
+    pointer-events: none;
+
+    z-index: 999999;
+}
+
+.paper-blast {
+    position: absolute;
+
+    border-radius: 2px;
+
+    opacity: 1;
+
+    animation:
+        paperExplosion 2.2s
+        cubic-bezier(.15, .8, .3, 1)
+        forwards;
+}
+
+.paper-blast:nth-child(4n) {
+    background: #ffd166;
+}
+
+.paper-blast:nth-child(4n + 1) {
+    background: #ff4f91;
+}
+
+.paper-blast:nth-child(4n + 2) {
+    background: #7bdff2;
+}
+
+.paper-blast:nth-child(4n + 3) {
+    background: #cdb4db;
+}
+
+@keyframes paperExplosion {
+    0% {
+        transform:
+            translate(-50%, -50%)
+            scale(0.2)
+            rotate(0deg);
+
+        opacity: 1;
+    }
+
+    20% {
+        opacity: 1;
+    }
+
+    100% {
+        transform:
+            translate(
+                calc(-50% + var(--x)),
+                calc(-50% + var(--y))
+            )
+            rotate(var(--rotate))
+            scale(1);
+
+        opacity: 0;
+    }
+}
+
+
+/* =====================================================
+   PAGE 1 - OPENING
+===================================================== */
+
+.opening {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffd6e7,
+            #e8d5ff
+        );
+
+    color: #4a3155;
+}
+
+
+/* =====================================================
+   FIRST SCREEN
+===================================================== */
+
+.opening-screen {
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+}
+
+.opening-screen h1 {
+    font-family:
+        "Trebuchet MS",
+        "Segoe UI",
+        sans-serif;
+
+    font-size: 42px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    color: #5b3b68;
+
+    margin: 20px 0 25px;
+
+    animation:
+        textFadeIn 1.5s ease forwards;
+}
+
+
+/* =====================================================
+   GIF
+===================================================== */
+
+.opening-gif {
+    width: min(75vw, 350px);
+
+    height: 300px;
+
+    object-fit: contain;
+
+    margin-bottom: 25px;
+}
+
+
+/* =====================================================
+   OPENING BUTTONS
+===================================================== */
+
+.opening-buttons {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 20px;
+}
+
+.opening-buttons button,
+#tryAgainButton {
+    padding: 16px 32px;
+
+    border-radius: 30px;
+
+    background: white;
+
+    color: #9b5de5;
+
+    font-size: 18px;
+
+    font-weight: bold;
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+
+/* =====================================================
+   NO SCREEN
+===================================================== */
+
+.no-screen {
+    display: none;
+
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+
+    text-align: center;
+}
+
+.no-screen h1 {
+    font-family:
+        "Trebuchet MS",
+        "Segoe UI",
+        sans-serif;
+
+    font-size: 45px;
+
+    color: #5b3b68;
+
+    margin-bottom: 25px;
+}
+
+
+/* =====================================================
+   TEXT ANIMATION
+===================================================== */
+
+@keyframes textFadeIn {
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+/* =====================================================
+   PAGE 2 - BIRTHDAY
+===================================================== */
+
+.birthday {
+    display: none;
+
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    padding: 20px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffe0ec,
+            #ddd6ff
+        );
+
+    color: #4a3155;
+}
+
+.balloons {
+    font-size: 55px;
+
+    margin-bottom: 20px;
+
+    animation:
+        float 2s infinite ease-in-out;
+}
+
+.birthday h1 {
+    font-size: 55px;
+
+    animation:
+        pop 1s ease;
+}
+
+.birthday h2 {
+    font-size: 38px;
+
+    margin: 20px 0;
+
+    animation:
+        pop 1.2s ease;
+}
+
+.birthday p {
+    font-size: 20px;
+
+    margin-bottom: 35px;
+}
+/* =====================================================
+   💋 BIRTHDAY KISSES VIDEO
+===================================================== */
+
+.kiss-video-page {
+    display: none;
+
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    padding: 30px 20px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffdce9,
+            #eadcff
+        );
+}
+
+.kiss-video-box {
+    width: 100%;
+    max-width: 650px;
+
+    padding: 35px 25px;
+
+    background: rgba(255, 255, 255, 0.8);
+
+    border-radius: 30px;
+
+    box-shadow:
+        0 15px 40px
+        rgba(0, 0, 0, 0.12);
+}
+
+.kiss-video-box h1 {
+    font-size: 40px;
+
+    color: #d63384;
+
+    margin-bottom: 25px;
+}
+
+/* 💋 BIRTHDAY KISSES GIF */
+
+#kissGif {
+    width: 100%;
+
+    max-width: 550px;
+
+    display: block;
+
+    margin: 0 auto 20px;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 10px 30px
+        rgba(0, 0, 0, 0.15);
+}
+
+.kiss-video-box p {
+    font-size: 20px;
+
+    color: #8a4b68;
+
+    margin-bottom: 25px;
+}
+
+#kissVideoNext {
+    background: #ff4f91;
+
+    color: white;
+}
+
+@media (max-width: 600px) {
+
+    .kiss-video-box h1 {
+        font-size: 30px;
+    }
+
+    .kiss-video-box {
+        padding: 30px 15px;
+    }
+
+    #kissGif {
+        border-radius: 15px;
+    }
+}
+/* =====================================================
+   PAGE 3 - MESSAGE
+===================================================== */
+
+.message {
+    display: none;
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 30px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #eadcff,
+            #ffdce9
+        );
+
+    color: #4a3155;
+}
+
+.message-box {
+    width: 100%;
+
+    max-width: 650px;
+
+    padding: 45px 35px;
+
+    text-align: center;
+
+    background:
+        rgba(255, 255, 255, 0.75);
+
+    border-radius: 30px;
+
+    box-shadow:
+        0 15px 40px
+        rgba(0, 0, 0, 0.12);
+
+    animation:
+        fadeUp 1s ease;
+}
+
+.small-title {
+    font-size: 16px;
+
+    color: #9b5de5;
+}
+
+.message-box h1 {
+    font-size: 42px;
+
+    margin: 15px 0 25px;
+}
+
+.message-box p {
+    font-size: 19px;
+
+    line-height: 1.7;
+
+    margin-bottom: 18px;
+}
+
+.message-box button {
+    margin-top: 15px;
+}
+
+
+/* =====================================================
+   PAGE 4 - MEMORIES
+===================================================== */
+
+.memories {
+    display: none;
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 40px 20px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffe5f0,
+            #e8ddff
+        );
+
+    color: #4a3155;
+
+    text-align: center;
+}
+
+.memory-content {
+    width: 100%;
+
+    max-width: 700px;
+
+    margin: auto;
+}
+
+.memories h1 {
+    font-size: 42px;
+
+    margin: 15px 0;
+}
+
+.memory-intro {
+    font-size: 18px;
+
+    margin-bottom: 25px;
+}
+
+
+/* =====================================================
+   PHOTO SLIDESHOW
+===================================================== */
+
+.slideshow {
+    width: min(85vw, 500px);
+
+    margin:
+        0 auto 20px;
+
+    padding: 12px;
+
+    background:
+        rgba(255, 255, 255, 0.8);
+
+    border-radius: 25px;
+
+    box-shadow:
+        0 15px 40px
+        rgba(0, 0, 0, 0.18);
+}
+
+#slideImage {
+    width: 100%;
+
+    aspect-ratio: 1 / 1;
+
+    object-fit: cover;
+
+    display: block;
+
+    border-radius: 18px;
+
+    animation:
+        slideFade 0.7s ease;
+}
+
+.slide-caption {
+    font-size: 17px;
+
+    line-height: 1.5;
+
+    padding:
+        15px 8px 5px;
+}
+
+
+/* =====================================================
+   PHOTO CONTROLS
+===================================================== */
+
+.slideshow-controls {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 25px;
+
+    margin-bottom: 25px;
+}
+
+.slide-arrow {
+    width: 55px;
+    height: 55px;
+
+    padding: 0;
+
+    border-radius: 50%;
+
+    background: white;
+
+    color: #9b5de5;
+
+    font-size: 28px;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    box-shadow:
+        0 8px 25px
+        rgba(0, 0, 0, 0.15);
+}
+
+.slide-arrow:hover {
+    transform: scale(1.1);
+}
+
+#slideCounter {
+    min-width: 65px;
+
+    font-size: 18px;
+
+    font-weight: bold;
+
+    color: #4a3155;
+}
+
+
+/* =====================================================
+   PHOTO ANIMATION
+===================================================== */
+
+@keyframes slideFade {
+    from {
+        opacity: 0;
+
+        transform:
+            translateX(25px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateX(0);
+    }
+}
+
+
+/* =====================================================
+   MUSIC PAGE
+===================================================== */
+
+.music-page {
+    display: none;
+
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    padding: 30px 20px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #eadcff,
+            #ffdce9
+        );
+}
+
+.music-box {
+    width: 100%;
+
+    max-width: 600px;
+
+    padding: 45px 30px;
+
+    background:
+        rgba(255, 255, 255, 0.8);
+
+    border-radius: 30px;
+
+    box-shadow:
+        0 15px 40px
+        rgba(0, 0, 0, 0.12);
+
+    animation:
+        fadeUp 1s ease;
+}
+
+.music-box h1 {
+    font-size: 40px;
+
+    color: #d63384;
+
+    margin:
+        15px 0 20px;
+}
+
+.music-icon {
+    font-size: 70px;
+
+    margin: 20px 0;
+}
+
+.music-box p {
+    font-size: 18px;
+
+    color: #5f4050;
+
+    margin-bottom: 25px;
+}
+
+#birthdayMusic {
+    width: 100%;
+
+    max-width: 450px;
+
+    margin-bottom: 25px;
+}
+
+#cakeButton,
+#musicButton {
+    background: #ff4f91;
+
+    color: white;
+
+    font-size: 18px;
+
+    font-weight: bold;
+}
+
+
+/* =====================================================
+   PAGE 6 - CAKE
+===================================================== */
+
+#cake-page {
+    display: none;
+
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffd6e7,
+            #fff0f6
+        );
+
+    overflow: hidden;
+}
+
+.cake-content {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+
+    padding: 20px;
+}
+
+.shabbu-title {
+    font-size: 52px;
+
+    color: #d63384;
+
+    margin-bottom: 5px;
+}
+
+.cake-subtitle {
+    font-size: 18px;
+
+    color: #8a4b68;
+
+    margin-bottom: 35px;
+}
+
+
+/* =====================================================
+   CAKE AREA
+===================================================== */
+
+.cake-area {
+    position: relative;
+
+    width: 260px;
+
+    height: 240px;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: flex-end;
+
+    margin-bottom: 5px;
+}
+
+
+/* =====================================================
+   CAKE
+===================================================== */
+
+.cake {
+    position: relative;
+
+    width: 210px;
+
+    height: 130px;
+}
+
+.cake-body {
+    position: absolute;
+
+    bottom: 20px;
+
+    left: 10px;
+
+    width: 190px;
+
+    height: 100px;
+
+    background:
+        linear-gradient(
+            #ff8fab,
+            #ff5c8a
+        );
+
+    border-radius:
+        15px 15px 25px 25px;
+
+    box-shadow:
+        0 10px 20px
+        rgba(0, 0, 0, 0.15);
+}
+
+.cake-top {
+    position: absolute;
+
+    top: 5px;
+
+    left: 10px;
+
+    width: 190px;
+
+    height: 55px;
+
+    background: #fff0f5;
+
+    border-radius: 50%;
+
+    z-index: 2;
+}
+
+.cake-cream {
+    position: absolute;
+
+    top: 30px;
+
+    left: 15px;
+
+    width: 180px;
+
+    height: 35px;
+
+    background: white;
+
+    border-radius: 50%;
+
+    z-index: 3;
+}
+
+
+/* =====================================================
+   CANDLE
+===================================================== */
+
+.candle {
+    position: absolute;
+
+    top: 0;
+
+    left: 50%;
+
+    transform:
+        translateX(-50%);
+
+    width: 25px;
+
+    height: 75px;
+
+    background:
+        repeating-linear-gradient(
+            45deg,
+            #fff,
+            #fff 8px,
+            #ff80ab 8px,
+            #ff80ab 15px
+        );
+
+    border-radius: 5px;
+
+    z-index: 5;
+}
+
+
+/* =====================================================
+   FLAME
+===================================================== */
+
+.flame {
+    position: absolute;
+
+    top: -38px;
+
+    left: 50%;
+
+    transform:
+        translateX(-50%);
+
+    width: 22px;
+
+    height: 32px;
+
+    background: #ffb300;
+
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 10px #ff9800,
+        0 0 25px #ff9800,
+        0 0 40px #ffcc00;
+
+    animation:
+        flicker 0.15s
+        infinite alternate;
+}
+
+.flame.off {
+    display: none;
+}
+
+@keyframes flicker {
+    from {
+        transform:
+            translateX(-50%)
+            scale(1);
+    }
+
+    to {
+        transform:
+            translateX(-50%)
+            scale(1.12);
+    }
+}
+
+
+/* =====================================================
+   BLOW BUTTON
+===================================================== */
+
+#blow-button {
+    padding: 14px 32px;
+
+    border-radius: 30px;
+
+    background: #ff4f91;
+
+    color: white;
+
+    font-size: 18px;
+
+    font-weight: bold;
+
+    box-shadow:
+        0 6px 15px
+        rgba(255, 79, 145, 0.3);
+}
+
+#blow-text {
+    font-size: 20px;
+
+    color: #d63384;
+
+    margin-bottom: 15px;
+}
+
+
+/* =====================================================
+   WISH SCREEN
+===================================================== */
+
+#wish-screen {
+    display: none;
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 100000;
+
+    background:
+        rgba(0, 0, 0, 0.78);
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+}
+
+.wish-box {
+    color: white;
+
+    padding: 30px;
+
+    max-width: 500px;
+
+    animation:
+        fadeUp 1s ease;
+}
+
+.wish-box h1 {
+    font-size: 38px;
+
+    margin-bottom: 10px;
+}
+
+.wish-box p {
+    font-size: 24px;
+
+    margin-bottom: 30px;
+}
+
+.wish-box button {
+    background: #ff4f91;
+
+    color: white;
+}
+/* =====================================================
+   VIDEO PAGE
+===================================================== */
+
+.video-page {
+    display: none;
+
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    padding: 30px 20px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #eadcff,
+            #ffdce9
+        );
+}
+
+.video-box {
+    width: 100%;
+    max-width: 700px;
+
+    padding: 35px 25px;
+
+    background:
+        rgba(255, 255, 255, 0.8);
+
+    border-radius: 30px;
+
+    box-shadow:
+        0 15px 40px
+        rgba(0, 0, 0, 0.12);
+}
+
+.video-box h1 {
+    font-size: 38px;
+
+    color: #d63384;
+
+    margin-bottom: 25px;
+}
+
+#birthdayVideo {
+    width: 100%;
+    max-width: 600px;
+
+    border-radius: 20px;
+
+    display: block;
+
+    margin: 0 auto 25px;
+
+    box-shadow:
+        0 10px 30px
+        rgba(0, 0, 0, 0.15);
+}
+
+#videoNextButton {
+    background: #ff4f91;
+
+    color: white;
+
+    font-size: 18px;
+
+    font-weight: bold;
+}
+
+@media (max-width: 600px) {
+
+    .video-box {
+        padding: 30px 15px;
+    }
+
+    .video-box h1 {
+        font-size: 28px;
+    }
+
+    #birthdayVideo {
+        border-radius: 15px;
+    }
+}
+
+/* =====================================================
+   FINAL PAGE
+===================================================== */
+
+.final {
+    display: none;
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 30px 20px;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffdce9,
+            #e8ddff
+        );
+
+    color: #4a3155;
+}
+
+.final-box {
+    width: 100%;
+
+    max-width: 650px;
+
+    padding: 50px 35px;
+
+    background:
+        rgba(255, 255, 255, 0.8);
+
+    border-radius: 30px;
+
+    box-shadow:
+        0 15px 40px
+        rgba(0, 0, 0, 0.12);
+
+    animation:
+        fadeUp 1s ease;
+}
+
+.final-box h1 {
+    font-size: 45px;
+
+    margin:
+        18px 0 25px;
+}
+
+.final-box p {
+    font-size: 19px;
+
+    line-height: 1.7;
+
+    margin-bottom: 20px;
+}
+
+.final-box h2 {
+    font-size: 27px;
+
+    margin-top: 30px;
+}
+
+.final-hearts {
+    font-size: 30px;
+
+    margin-top: 25px;
+
+    animation:
+        float 2s infinite ease-in-out;
+}
+
+
+/* =====================================================
+   ANIMATIONS
+===================================================== */
+
+@keyframes float {
+    0%,
+    100% {
+        transform:
+            translateY(0);
+    }
+
+    50% {
+        transform:
+            translateY(-15px);
+    }
+}
+
+@keyframes pop {
+    0% {
+        opacity: 0;
+
+        transform:
+            scale(0.5);
+    }
+
+    70% {
+        transform:
+            scale(1.1);
+    }
+
+    100% {
+        opacity: 1;
+
+        transform:
+            scale(1);
+    }
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+
+    /* Opening */
+
+    .opening-screen h1,
+    .no-screen h1 {
+        font-size: 30px;
+    }
+
+    .opening-gif {
+        width: 85vw;
+
+        height: 270px;
+    }
+
+    .opening-buttons {
+        gap: 15px;
+    }
+
+    .opening-buttons button,
+    #tryAgainButton {
+        padding: 14px 25px;
+
+        font-size: 17px;
+    }
+
+
+    /* Birthday */
+
+    .birthday h1 {
+        font-size: 40px;
+    }
+
+    .birthday h2 {
+        font-size: 30px;
+    }
+
+    .birthday p {
+        font-size: 18px;
+    }
+
+
+    /* Message */
+
+    .message {
+        padding: 20px 15px;
+    }
+
+    .message-box {
+        padding: 35px 22px;
+    }
+
+    .message-box h1 {
+        font-size: 34px;
+    }
+
+    .message-box p {
+        font-size: 17px;
+    }
+
+
+    /* Memories */
+
+    .memories {
+        padding: 35px 15px;
+    }
+
+    .memories h1 {
+        font-size: 32px;
+    }
+
+    .memory-intro {
+        font-size: 16px;
+    }
+
+    .slideshow {
+        width: 90vw;
+
+        padding: 9px;
+
+        border-radius: 20px;
+    }
+
+    .slideshow img {
+        border-radius: 15px;
+    }
+
+    .slide-caption {
+        font-size: 14px;
+    }
+
+    .slideshow-controls {
+        gap: 18px;
+    }
+
+    .slide-arrow {
+        width: 50px;
+        height: 50px;
+
+        font-size: 25px;
+    }
+
+    #slideCounter {
+        font-size: 16px;
+    }
+
+
+    /* Music */
+
+    .music-box {
+        padding: 35px 20px;
+    }
+
+    .music-box h1 {
+        font-size: 30px;
+    }
+
+    .music-icon {
+        font-size: 55px;
+    }
+
+
+    /* Cake */
+
+    .shabbu-title {
+        font-size: 40px;
+    }
+
+    .cake-subtitle {
+        font-size: 16px;
+
+        margin-bottom: 25px;
+    }
+
+    .cake-area {
+        transform:
+            scale(0.9);
+    }
+
+    #blow-text {
+        font-size: 18px;
+    }
+
+
+    /* Wish */
+
+    .wish-box {
+        padding: 25px 20px;
+    }
+
+    .wish-box h1 {
+        font-size: 30px;
+    }
+
+    .wish-box p {
+        font-size: 21px;
+    }
+
+
+    /* Final */
+
+    .final {
+        padding: 25px 15px;
+    }
+
+    .final-box {
+        padding: 40px 22px;
+    }
+
+    .final-box h1 {
+        font-size: 34px;
+    }
+
+    .final-box p {
+        font-size: 17px;
+    }
+
+    .final-box h2 {
+        font-size: 23px;
+    }
+}
+/* =====================================================
+   ✨ TAP TO START PAGE
+===================================================== */
+
+.tap-page {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    min-height: 100vh;
+
+    padding: 20px;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffd6e7,
+            #e8d5ff
+        );
+}
+
+.tap-box {
+    padding: 45px 30px;
+
+    max-width: 500px;
+    width: 100%;
+
+    background: rgba(255, 255, 255, 0.8);
+
+    border-radius: 30px;
+
+    box-shadow:
+        0 15px 40px
+        rgba(0, 0, 0, 0.12);
+}
+
+.tap-box h1 {
+    font-size: 45px;
+
+    color: #4a3155;
+
+    margin-bottom: 15px;
+}
+
+.tap-box p {
+    font-size: 20px;
+
+    color: #8a4b68;
+
+    margin-bottom: 30px;
+}
+
+#tapButton {
+    padding: 15px 35px;
+
+    border: none;
+
+    border-radius: 30px;
+
+    background: #ff4f91;
+
+    color: white;
+
+    font-size: 20px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 8px 20px
+        rgba(255, 79, 145, 0.3);
+}
